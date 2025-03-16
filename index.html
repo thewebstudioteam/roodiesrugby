@@ -544,24 +544,27 @@
         border-radius: 3px;
       }
 
-      nav ul li a:hover::after {
-        width: 60%;
-      }
-
       nav ul li a:hover {
         background-color: transparent;
       }
 
       .menu-toggle {
         display: none;
-        background: none;
+        background: none !important; /* Force no background */
         border: none;
-
         cursor: pointer;
         padding: 10px;
-        border-radius: 50%;
+        outline: none; /* Remove outline on focus */
+        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
       }
 
+      /* Add this to prevent focus/active background */
+      .menu-toggle:focus,
+      .menu-toggle:active {
+        background: none !important;
+        outline: none !important;
+        -webkit-tap-highlight-color: transparent;
+      }
       .hamburger-icon {
         display: block;
         width: 24px;
@@ -576,7 +579,6 @@
         width: 100%;
         background: white;
         border-radius: 3px;
-        transition: all 0.25s ease-in-out;
       }
 
       .hamburger-icon span:nth-child(1) {
@@ -621,8 +623,7 @@
           display: block;
           position: absolute;
           right: 20px;
-          top: 50%;
-          transform: translateY(-50%);
+
           z-index: 101;
         }
 
@@ -809,7 +810,6 @@
             </div>
           </button>
           <ul class="nav-menu">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
             <li class="nav-item">
               <a href="#about" class="nav-link">About</a>
             </li>
@@ -1232,6 +1232,20 @@
         <div class="footer-bottom">
           <p style="margin: 0">
             &copy; 2025 Hoërskool Roodepoort Rugby. All Rights Reserved.
+          </p>
+          <p style="margin: 5px 0; font-size: 0.85rem; color: #aaa">
+            Website by
+            <a
+              href="https://thewebstudio.co"
+              style="
+                color: #aaa;
+                text-decoration: none;
+                transition: color 0.3s ease;
+              "
+              onmouseover="this.style.color='#fff'"
+              onmouseout="this.style.color='#aaa'"
+              >The Web Studio &lt;/&gt;</a
+            >
           </p>
         </div>
       </div>
