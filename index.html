@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hoërskool Roodepoort Rugby</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Base Styles */
+      body {
+        font-family: "Jost", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      /* Typography */
+      .display-1 {
+        font-family: "Jost", sans-serif;
+        font-size: 4.6rem;
+        line-height: 1.1;
+      }
+      .display-2 {
+        font-family: "Jost", sans-serif;
+        font-size: 3rem;
+        line-height: 1.1;
+      }
+      .display-4 {
+        font-family: "Jost", sans-serif;
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      .display-5 {
+        font-family: "Jost", sans-serif;
+        font-size: 2.2rem;
+        line-height: 1.5;
+      }
+      .display-7 {
+        font-family: "Jost", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
+
+      /* Responsive Typography */
+      @media (max-width: 992px) {
+        .display-1 {
+          font-size: 3.68rem;
+        }
+      }
+      @media (max-width: 768px) {
+        .display-1 {
+          font-size: 3.22rem;
+          font-size: calc(
+            2.26rem + (4.6 - 2.26) * ((100vw - 20rem) / (48 - 20))
+          );
+          line-height: calc(
+            1.1 * (2.26rem + (4.6 - 2.26) * ((100vw - 20rem) / (48 - 20)))
+          );
+        }
+        .display-2 {
+          font-size: 2.4rem;
+          font-size: calc(1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20)));
+          line-height: calc(
+            1.3 * (1.7rem + (3 - 1.7) * ((100vw - 20rem) / (48 - 20)))
+          );
+        }
+        .display-4 {
+          font-size: 0.88rem;
+          font-size: calc(
+            1.0350000000000001rem + (1.1 - 1.0350000000000001) *
+              ((100vw - 20rem) / (48 - 20))
+          );
+          line-height: calc(
+            1.4 *
+              (
+                1.0350000000000001rem + (1.1 - 1.0350000000000001) *
+                  ((100vw - 20rem) / (48 - 20))
+              )
+          );
+        }
+        .display-5 {
+          font-size: 1.76rem;
+          font-size: calc(
+            1.42rem + (2.2 - 1.42) * ((100vw - 20rem) / (48 - 20))
+          );
+          line-height: calc(
+            1.4 * (1.42rem + (2.2 - 1.42) * ((100vw - 20rem) / (48 - 20)))
+          );
+        }
+        .display-7 {
+          font-size: 0.96rem;
+          font-size: calc(
+            1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20))
+          );
+          line-height: calc(
+            1.4 * (1.07rem + (1.2 - 1.07) * ((100vw - 20rem) / (48 - 20)))
+          );
+        }
+      }
+
+      /* Buttons */
+      .btn {
+        padding: 0.6rem 1.2rem;
+        border-radius: 4px;
+        display: inline-block;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .btn-lg {
+        padding: 1rem 2.6rem;
+        border-radius: 4px;
+      }
+      .btn-secondary {
+        background-color: #e43f3f;
+        border-color: #e43f3f;
+        color: #ffffff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      }
+      .btn-secondary:hover {
+        color: #ffffff;
+        background-color: #b31919;
+        border-color: #b31919;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+      }
+      .btn-info {
+        background-color: #051844;
+        border-color: #051844;
+        color: #ffffff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      }
+      .btn-info:hover {
+        color: #ffffff;
+        background-color: #000000;
+        border-color: #000000;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 800px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .hero-content {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+        z-index: 2;
+      }
+      .hero-content h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .section-title h2 {
+        color: #051844;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .section-title p {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      /* About Section */
+      .about {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+      }
+      .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        align-items: center;
+      }
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+      }
+      .about-image img {
+        width: 100%;
+        margin-left: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Message Section */
+      .message {
+        background-color: #051844;
+        color: white;
+        padding: 60px 5px;
+      }
+      .message-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        align-items: center;
+      }
+      .message-text {
+        flex: 2;
+        min-width: 300px;
+        margin-right: 60px;
+      }
+      .message-image {
+        flex: 1;
+        min-width: 250px;
+        max-width: 400px;
+      }
+      .message-image img {
+        width: 100%;
+      }
+
+      /* Team Section */
+      .team {
+        padding: 60px 0;
+      }
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+      .team-member {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+      .team-member img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      .team-member-info {
+        padding: 15px;
+        text-align: center;
+      }
+      .team-member-info h3 {
+        margin: 0 0 5px 0;
+        color: #051844;
+      }
+      .team-member-info p {
+        margin: 0;
+        color: #666;
+      }
+
+      /* Achievements Section */
+      .achievements {
+        background-color: #f9f9f9;
+        padding: 60px 0;
+      }
+      .achievements-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+      .achievement-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      .achievement-card h3 {
+        color: #e43f3f;
+        margin-top: 0;
+      }
+
+      /* Tour Section */
+      .tour {
+        padding: 60px 0;
+      }
+      .tour-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+      .tour-text {
+        flex: 1;
+        min-width: 300px;
+      }
+      .tour-map {
+        flex: 1;
+        min-width: 300px;
+        height: 350px;
+        background-color: #eee;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Tour Slideshow */
+      .tour-slideshow {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        height: 500px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: 30px auto;
+      }
+      .slideshow-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .dots-container {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.6s ease;
+      }
+      .dot.active {
+        background-color: #e43f3f;
+      }
+
+      /* Call to Action */
+      .cta {
+        background-color: #e43f3f;
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+      }
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #051844;
+        color: white;
+        padding: 40px 0;
+      }
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .footer-column {
+        flex: 1;
+        min-width: 250px;
+        padding: 0 5px;
+      }
+      .footer-column h3 {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+      }
+      .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      .footer-column ul li a {
+        color: #ccc;
+        text-decoration: none;
+      }
+      .footer-column ul li a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+      .footer-bottom {
+        margin-top: 40px;
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Enhanced Header Styles - New Design */
+      header {
+        background-color: #e43f3f;
+        color: white;
+        padding: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      /* FIXED: Header container styles */
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease;
+      }
+
+      .logo img {
+        height: 100px;
+        margin-right: 15px;
+      }
+
+      .logo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logo-text h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+      }
+
+      .logo-text span {
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+
+      /* Navigation adjustments */
+      nav {
+        display: flex;
+        align-items: center;
+      }
+
+      nav ul.nav-menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+      }
+
+      nav ul li {
+        margin: 0;
+        position: relative;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-weight: 500;
+        font-size: 1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        display: block;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background: white;
+        left: 50%;
+        bottom: 5px;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+        border-radius: 3px;
+      }
+
+      nav ul li a:hover::after {
+        width: 60%;
+      }
+
+      nav ul li a:hover {
+        background-color: transparent;
+      }
+
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+      }
+
+      .hamburger-icon {
+        display: block;
+        width: 24px;
+        height: 18px;
+        position: relative;
+      }
+
+      .hamburger-icon span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 3px;
+        transition: all 0.25s ease-in-out;
+      }
+
+      .hamburger-icon span:nth-child(1) {
+        top: 0;
+      }
+
+      .hamburger-icon span:nth-child(2) {
+        top: 7px;
+      }
+
+      .hamburger-icon span:nth-child(3) {
+        top: 14px;
+      }
+
+      /* Media Queries for the Header */
+      @media (max-width: 992px) {
+        .logo img {
+          height: 70px;
+        }
+
+        .logo-text h1 {
+          font-size: 1.4rem;
+        }
+
+        nav ul li a {
+          padding: 8px 12px;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 800px) {
+        header .container {
+          position: relative;
+        }
+
+        .hamburger-icon {
+          margin-top: 30px;
+          margin-left: 20px;
+        }
+
+        .menu-toggle {
+          display: block;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 101;
+        }
+
+        .menu-toggle.active .hamburger-icon span:nth-child(1) {
+          top: 7px;
+          transform: rotate(45deg);
+        }
+
+        .menu-toggle.active .hamburger-icon span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .menu-toggle.active .hamburger-icon span:nth-child(3) {
+          top: 7px;
+          transform: rotate(-45deg);
+        }
+
+        nav ul.nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          flex-direction: column;
+          background-color: #e43f3f;
+          padding: 20px 0;
+
+          border-radius: 0 0 10px 10px;
+          z-index: 100;
+        }
+
+        nav ul.nav-menu.show {
+          display: flex;
+          animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        nav ul li {
+          width: 100%;
+          text-align: center;
+        }
+
+        nav ul li a {
+          padding: 15px 0;
+          width: 100%;
+          border-radius: 0;
+          font-size: 1.1rem;
+        }
+
+        nav ul li a::after {
+          display: none;
+        }
+
+        nav ul li a:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      /* Medium devices (tablets, less than 992px) */
+      @media (max-width: 992px) {
+        .container {
+          max-width: 720px;
+        }
+
+        .message-text {
+          margin-right: 30px;
+        }
+
+        .tour-slideshow {
+          height: 400px;
+        }
+
+        .footer-content {
+          gap: 20px;
+        }
+      }
+
+      /* Small devices (landscape phones, less than 768px) */
+      @media (max-width: 768px) {
+        .hero {
+          height: 400px;
+        }
+
+        .hero-content h2 {
+          font-size: 2rem;
+        }
+
+        .about-content,
+        .message-content {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .message-text {
+          margin-right: 0;
+        }
+
+        .message-image {
+          max-width: 100%;
+        }
+
+        .about-image img {
+          margin-left: 0;
+        }
+
+        .tour-slideshow {
+          height: 300px;
+        }
+
+        .achievements-list,
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Extra small devices (portrait phones, less than 576px) */
+      @media (max-width: 576px) {
+        .section-title h2 {
+          font-size: 2rem;
+        }
+
+        .hero-content h2 {
+          font-size: 1.8rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .tour-slideshow {
+          height: 250px;
+        }
+
+        .achievement-card {
+          padding: 15px;
+        }
+
+        .btn-lg {
+          padding: 0.8rem 1.8rem;
+        }
+
+        .cta h2 {
+          font-size: 2rem;
+        }
+
+        .cta p {
+          font-size: 1rem;
+        }
+
+        .footer-column {
+          min-width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- FIXED: Simplified header structure -->
+    <header>
+      <div class="container">
+        <a class="logo">
+          <img src="logo final.png" alt="Hoërskool Roodepoort Logo" />
+          <div class="logo-text">
+            <h1>Hoërskool Roodepoort</h1>
+            <span>Rugby Excellence</span>
+          </div>
+        </a>
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation">
+            <div class="hamburger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="#achievements" class="nav-link">Achievements</a>
+            </li>
+            <li class="nav-item">
+              <a href="#tour" class="nav-link">Tour 2025</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <img
+        src="Main Background.jpg"
+        alt="Rugby Team Background"
+        style="
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
+          top: 0;
+          left: 0;
+          z-index: 0;
+        "
+      />
+      <div
+        style="
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 1;
+        "
+      ></div>
+      <div class="hero-content">
+        <h2>Roodie Rugby Excellence</h2>
+        <p>Building champions on and off the field since 1934</p>
+        <a href="#tour" class="btn btn-secondary btn-lg"
+          >Learn About Our Tour</a
+        >
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Rugby Program</h2>
+          <p>Excellence, Discipline & Teamwork</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>A Tradition of Excellence</h3>
+            <p>
+              The Hoërskool Roodepoort Rugby program has a proud history dating
+              back to the school's founding. Our program is built on the values
+              of hard work, dedication, and respect for the game.
+            </p>
+            <p>
+              We strive to develop not only skilled rugby players but also young
+              men of character who will make a positive impact in their
+              communities long after they leave our fields.
+            </p>
+            <p>
+              Our coaching staff includes former provincial players and
+              dedicated educators who understand both the technical aspects of
+              the game and the importance of character development.
+            </p>
+            <h3>Our Philosophy</h3>
+            <p>
+              At Hoërskool Roodepoort, we believe that rugby is more than just a
+              sport – it's a tool for teaching life skills, building character,
+              and creating lasting bonds between teammates.
+            </p>
+          </div>
+          <div class="about-image">
+            <img
+              src="second.jpg"
+              alt="Rugby team in action"
+              style="box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); max-width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message from Coach -->
+    <section class="message">
+      <div class="container">
+        <div class="message-content">
+          <div class="message-text">
+            <h2>Message from Coaches</h2>
+            <p>
+              At Hoërskool Roodepoort Rugby, we are dedicated to developing
+              exceptional players who embody our core values of respect,
+              discipline, and excellence. Our program focuses on creating an
+              environment where players can thrive both as athletes and as
+              individuals.
+            </p>
+            <p>
+              This year, our first team has demonstrated remarkable skill and
+              dedication, resulting in an impressive season record. Their hard
+              work has earned them the opportunity to participate in a tour,
+              where they will represent our school, our community, and our
+              country.
+            </p>
+            <p>
+              The upcoming tour offers our players a once-in-a-lifetime
+              experience to test their skills against provincial competition,
+              learn from different styles of play, and grow as individuals
+              through cultural exchange. These experiences will be invaluable to
+              their development, both on and off the rugby field.
+            </p>
+            <p>
+              We are incredibly proud of what our players have achieved and the
+              young men they are becoming.
+            </p>
+            <p><strong>— Roodies Coaches</strong></p>
+          </div>
+          <div class="message-image">
+            <img src="highschool.jpg" alt="Head Coach" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Recent Achievements</h2>
+          <p>A record of excellence on the field</p>
+        </div>
+        <div class="achievements-list">
+          <div class="achievement-card">
+            <h3>League Winners 2024</h3>
+            <p>
+              In 2024 we were league winners. Throughout the season the u/15
+              rugby team scored a total of 735 points and only conceded 35
+              points.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>Noordvaal Winners 2024</h3>
+            <p>The u/15 rugby team won the Noordvaal tournament in 2024.</p>
+          </div>
+          <div class="achievement-card">
+            <h3>Jaru Tournament 7's Shield Winners</h3>
+            <p>
+              Our team displayed exceptional skill and teamwork to win the
+              prestigious Jaru Tournament 7's Shield in 2024, demonstrating our
+              dominance in the shorter format of the game.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>League Semi Finals 2023</h3>
+            <p>
+              In 2023 we reached the semi-finals of the league, narrowly missing
+              out on the finals.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>Provincial Players</h3>
+            <p>
+              In the past few years the school had numerous players selected for
+              The Golden Lions school teams.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>Sports Excellence Award</h3>
+            <p>
+              Received the Gauteng Department of Education's Sports Excellence
+              Award for comprehensive sports development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tour Section -->
+    <section id="tour" class="tour">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our 2025 Rugby Tour</h2>
+          <p>A Five-Day Rugby Adventure</p>
+        </div>
+        <div class="tour-content">
+          <div class="tour-text">
+            <h3>An Exciting Rugby Experience</h3>
+            <p>
+              From April 1-5, 2025, at Sundown Country Estate near Rustenburg,
+              our rugby team will embark on an intensive five-day tour designed
+              to challenge and develop our players both on and off the field as
+              part of the Blikkies Groenewald Rugby Tournament.
+            </p>
+            <p>
+              This tour represents an excellent opportunity for our players to:
+            </p>
+            <ul>
+              <li>Compete against quality opposition from different regions</li>
+              <li>
+                Develop their skills through specialised training sessions
+              </li>
+              <li>Build stronger team bonds and camaraderie</li>
+              <li>Create lasting memories with teammates</li>
+              <li>Represent our school with pride</li>
+            </ul>
+
+            <h3>Tour Details</h3>
+            <p>
+              <strong>Cost:</strong> R4000 per player (all-inclusive package)
+            </p>
+            <p>
+              <strong>What's included:</strong>
+            </p>
+            <ul>
+              <li>Transportation to and from all destinations</li>
+              <li>Accommodation for four nights</li>
+              <li>All meals and refreshments</li>
+              <li>Match and training facility fees</li>
+              <li>Recovery sessions and team building activities</li>
+              <li>A custom tour jersey for each player</li>
+              <li>Tournament entry fees</li>
+              <li>Jersey washing during the tour</li>
+            </ul>
+            <h3>Tour Benefits</h3>
+            <p>
+              Previous tours have proven to be pivotal in player development,
+              with many participants showing significant improvement in skill
+              level, game awareness, and mental resilience. The tour provides a
+              professional environment that prepares players for higher levels
+              of competition.
+            </p>
+            <p>
+              <strong>Important Note:</strong> After this tour, a select team
+              will be chosen to tour Ireland in December 2025 - an incredible
+              opportunity for our top performers.
+            </p>
+            <div class="sponsorship-appeal">
+              <h3>Sponsorship Opportunities</h3>
+              <p>
+                We believe that financial circumstances should never prevent
+                talented players from participating in this valuable experience.
+                Currently, we have several dedicated team members who cannot
+                afford the full tour fee.
+              </p>
+              <p>
+                We are seeking sponsors to help these deserving players attend
+                the tour. Your sponsorship can make a significant difference in
+                a young athlete's development and future opportunities.
+              </p>
+              <p>Sponsorship options include:</p>
+              <ul>
+                <li>Full player sponsorship (R4000)</li>
+                <li>Partial player sponsorship (any amount helps)</li>
+                <li>Equipment or kit donations</li>
+              </ul>
+              <p>
+                All sponsors will be acknowledged on our tour jerseys, social
+                media platforms, and in our school newsletter. For more
+                information about sponsorship opportunities, please contact us
+                at <a href="mailto:sport@roodie.ac.za">sport@roodie.ac.za</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tour-slideshow">
+          <div class="slideshow-container">
+            <div class="slide fade">
+              <img src="car1.jpg" alt="UK Tour Location" style="width: 100%" />
+            </div>
+            <div class="slide fade">
+              <img
+                src="car2.jpg"
+                alt="Ireland Tour Location"
+                style="width: 100%"
+              />
+            </div>
+            <div class="slide fade">
+              <img src="car3.jpg" alt="Team Travel" style="width: 100%" />
+            </div>
+            <div class="slide fade">
+              <img src="car4.jpg" alt="Team Travel" style="width: 100%" />
+            </div>
+            <div class="slide fade">
+              <img src="car5.jpg" alt="Team Travel" style="width: 100%" />
+            </div>
+            <!-- Navigation dots -->
+            <div class="dots-container">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+      <div class="container">
+        <h2>Be Part of Our Journey</h2>
+        <p>
+          Join us in supporting the Hoërskool Roodepoort Rugby team as they
+          embark on their 2025 tour. Your sponsorship can make a difference in
+          the lives of young athletes and help them achieve their dreams.
+        </p>
+        <a href="#contact" class="btn btn-lg btn-info">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container" style="text-align: center; padding: 20px 15px">
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>Contact Information</h3>
+            <p style="margin: 5px 0">Hoërskool Roodepoort Rugby</p>
+            <p style="margin: 5px 0">2 Konig Avenue, Horison</p>
+            <p style="margin: 5px 0">Roodepoort, 1724</p>
+            <p style="margin: 5px 0">
+              Email:
+              <a href="mailto:sport@roodie.ac.za" style="color: white"
+                >sport@roodie.ac.za</a
+              >
+            </p>
+            <p style="margin: 5px 0">Phone: 011 763 5831</p>
+          </div>
+          <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul style="padding: 0; list-style: none; margin-top: 5px">
+              <li style="margin-bottom: 5px">
+                <a href="#" style="color: white">Home</a>
+              </li>
+              <li style="margin-bottom: 5px">
+                <a href="#about" style="color: white">About Our Program</a>
+              </li>
+              <li style="margin-bottom: 5px">
+                <a href="#team" style="color: white">Team Members</a>
+              </li>
+              <li style="margin-bottom: 5px">
+                <a href="#achievements" style="color: white">Achievements</a>
+              </li>
+              <li style="margin-bottom: 5px">
+                <a href="#tour" style="color: white">2025 Rugby Tour</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column" style="text-align: center">
+            <h3>Follow Us</h3>
+            <ul style="padding: 0; list-style: none; margin-top: 5px">
+              <li
+                style="
+                  margin-bottom: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  style="margin-right: 8px"
+                >
+                  <path
+                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9 21.59 18.03 20.4 19.58 18.64C21.13 16.88 21.99 14.65 22 12.34C22 6.53 17.5 2.04 12 2.04Z"
+                  />
+                </svg>
+                <a
+                  href="https://web.facebook.com/p/Ho%C3%ABrskool-Roodepoort-61553572554186/?_rdc=1&_rdr#"
+                  style="color: white; text-decoration: none"
+                  >Facebook</a
+                >
+              </li>
+              <li
+                style="
+                  margin-bottom: 5px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  style="margin-right: 8px"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  />
+                </svg>
+                <a
+                  href="https://www.instagram.com/hoerskool_roodepoort/"
+                  style="color: white; text-decoration: none"
+                  >Instagram</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p style="margin: 0">
+            &copy; 2025 Hoërskool Roodepoort Rugby. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Simple JavaScript for smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Image placeholder fallback
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll("img");
+        images.forEach((img) => {
+          img.onerror = function () {
+            this.src =
+              "https://via.placeholder.com/" +
+              (this.width || 300) +
+              "x" +
+              (this.height || 200) +
+              "?text=Rugby+Team";
+          };
+        });
+      });
+
+      // Slideshow functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        // Initialize first slide
+        showSlide(slideIndex);
+
+        // Auto rotate slides every 4 seconds
+        setInterval(function () {
+          slideIndex++;
+          if (slideIndex >= slides.length) slideIndex = 0;
+          showSlide(slideIndex);
+        }, 4000);
+
+        function showSlide(n) {
+          // Remove active class from all slides and dots
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            dots[i].classList.remove("active");
+          }
+
+          // Add active class to current slide and dot
+          slides[n].classList.add("active");
+          dots[n].classList.add("active");
+        }
+
+        // Add click event to dots
+        for (let i = 0; i < dots.length; i++) {
+          dots[i].addEventListener("click", function () {
+            slideIndex = i;
+            showSlide(slideIndex);
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector(".nav-menu");
+
+        // Toggle menu on hamburger click
+        if (menuToggle) {
+          menuToggle.addEventListener("click", function () {
+            // Simply toggle classes without setting inline styles
+            navMenu.classList.toggle("show");
+            menuToggle.classList.toggle("active");
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", function (e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+              navMenu.classList.remove("show");
+              menuToggle.classList.remove("active");
+            }
+          });
+
+          // Close menu when clicking a nav link (for better mobile UX)
+          const navLinks = document.querySelectorAll(".nav-link");
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+              navMenu.classList.remove("show");
+              menuToggle.classList.remove("active");
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
